@@ -87,6 +87,7 @@ class Entity():
         self.width = width
         self.height = height
         self.movement = [0, 0]
+        self.speed = 2
         self.flip = False
         self.rect = pygame.Rect(self.movement[0], self.movement[1], self.width, self.height)
         self.action = 'idle'
@@ -95,3 +96,9 @@ class Entity():
         self.air_timer = 0
         self.moving_left = False
         self.moving_right = False
+
+    def move(self):
+        if self.moving_right:
+            self.movement[0] += 2
+        if self.moving_left:
+            self.movement[0] -= 2
